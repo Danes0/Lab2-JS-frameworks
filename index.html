@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2-JS-frameworks - Live Demo</title>
+</head>
+<body>
+    <h1>Lab2-JS-frameworks - Live Demo</h1>
+    <p>This project demonstrates the use of Node.js modules by creating and importing custom functions.</p>
+
+    <script type="module">
+        import { welcomeMessage, convertWeight, calculateBMI, bodyFatCal } from "./SecondFile.js";
+
+        console.log("Starting Live Demo...");
+
+        welcomeMessage("User", "Demo");
+
+        console.log("\n**Convert from pounds to kilograms**");
+        console.log(convertWeight(150, "lb"));
+
+        console.log("\n**Convert from kilograms to pounds**");
+        console.log(convertWeight(52, "kg"));
+
+        console.log("\n**Calculate BMI using kilograms and meters**");
+        let bmiString = calculateBMI(52, 1.51);
+        console.log(bmiString);
+
+        let bmiValue = parseFloat(bmiString.match(/[\d.]+/)[0]);
+
+        console.log("\n**Estimate body fat percentage by gender ('female' or 'male') and age**");
+        console.log(bodyFatCal(parseFloat(bmiValue), 34, "female"));
+    </script>
+</body>
+</html>
