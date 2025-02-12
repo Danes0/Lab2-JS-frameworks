@@ -96,5 +96,5 @@ export function bodyFatCal(bmi, age, gender) {
         else idealRange = "13-24%";
     }
     
-    return `Based on your BMI of ${bmi} and age ${age}, your estimated body fat percentage is ${bodyFat.toFixed(2)}%. The ideal range for your gender and age group is ${idealRange}.`;
+    return `Based on your BMI of ${bmi} and age ${age}, your estimated body fat percentage \nis ${bodyFat.toFixed(2)}%. The ideal range for your gender and age group is ${idealRange}.`;
 }
