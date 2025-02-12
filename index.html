@@ -9,27 +9,41 @@
     <h1>Lab2-JS-frameworks - Live Demo</h1>
     <p>This project demonstrates the use of Node.js modules by creating and importing custom functions.</p>
 
+    <h2>Demo Results</h2>
+    <!-- This element will display the output of the functions -->
+    <pre id="output"></pre>
+
     <script type="module">
+        // Import functions from SecondFile.js
         import { welcomeMessage, convertWeight, calculateBMI, bodyFatCal } from "./SecondFile.js";
 
-        console.log("Starting Live Demo...");
+        // Get the output element
+        const output = document.getElementById("output");
 
-        welcomeMessage("User", "Demo");
+        function printResult(text) {
+            output.innerText += text + "\n";
+        }
 
-        console.log("\n**Convert from pounds to kilograms**");
-        console.log(convertWeight(150, "lb"));
+        // Call functions and display the results on the webpage
+        printResult("*** Starting Live Demo ***");
+        
+        printResult("\n**Welcome Message**");
+        printResult(welcomeMessage("User", "Demo"));
 
-        console.log("\n**Convert from kilograms to pounds**");
-        console.log(convertWeight(52, "kg"));
+        printResult("\n**Convert from pounds to kilograms**");
+        printResult(convertWeight(150, "lb"));
 
-        console.log("\n**Calculate BMI using kilograms and meters**");
+        printResult("\n**Convert from kilograms to pounds**");
+        printResult(convertWeight(52, "kg"));
+
+        printResult("\n**Calculate BMI using kilograms and meters**");
         let bmiString = calculateBMI(52, 1.51);
-        console.log(bmiString);
+        printResult(bmiString);
 
         let bmiValue = parseFloat(bmiString.match(/[\d.]+/)[0]);
 
-        console.log("\n**Estimate body fat percentage by gender ('female' or 'male') and age**");
-        console.log(bodyFatCal(parseFloat(bmiValue), 34, "female"));
+        printResult("\n**Estimate body fat percentage by gender ('female' or 'male') and age**");
+        printResult(bodyFatCal(parseFloat(bmiValue), 34, "female"));
     </script>
 </body>
 </html>
