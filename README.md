@@ -1,9 +1,11 @@
 # Lab2-JS-frameworks
 
 **Project Overview**
+
 This project demonstrates the use of Node.js modules by creating and importing custom functions. The purpose is to practice modular JavaScript using ES modules
 
 **Project Structure**
+
 Inside the Lab2-JS-frameworks folder, you will find the following files:
   * FirstFile.js → The entry point that calls and executes functions from SecondFile.js.
   * SecondFile.js → A utility file that contains various functions for different operations.
