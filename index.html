@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab2-JS-frameworks - Live Demo</title>
+
+    <style>
+        /* Basic styling for better readability */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 16px;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Lab2-JS-frameworks - Live Demo</h1>
+    <p>This project demonstrates the use of Node.js modules by creating and importing custom functions.</p>
+
+    <h2>Demo Results</h2>
+    <!-- This element will display the output of the functions -->
+    <pre id="output"></pre>
+
+    <script type="module">
+        // Import functions from SecondFile.js
+        import { welcomeMessage, convertWeight, calculateBMI, bodyFatCal } from "./SecondFile.js";
+
+        // Get the output element
+        const output = document.getElementById("output");
+
+        function printResult(text) {
+            output.innerText += text + "\n";
+        }
+
+        // Call functions and display the results on the webpage
+        printResult("*** Starting Live Demo ***");
+        
+        printResult("\n**Welcome Message**");
+        printResult(welcomeMessage("User", "Demo"));
+
+        printResult("\n**Convert from pounds to kilograms**");
+        printResult(convertWeight(150, "lb"));
+
+        printResult("\n**Convert from kilograms to pounds**");
+        printResult(convertWeight(52, "kg"));
+
+        printResult("\n**Calculate BMI using kilograms and meters**");
+        let bmiString = calculateBMI(52, 1.51);
+        printResult(bmiString);
+
+        let bmiValue = parseFloat(bmiString.match(/[\d.]+/)[0]);
+
+        printResult("\n**Estimate body fat percentage by gender ('female' or 'male') and age**");
+        printResult(bodyFatCal(parseFloat(bmiValue), 34, "female"));
+    </script>
+</body>
+</html>
